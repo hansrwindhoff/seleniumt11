@@ -1,0 +1,28 @@
+{
+    "version": "1.6.0-dev.20150909",
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "isolatedModules": false,
+        "jsx": "react",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "declaration": false,
+        "noImplicitAny": false,
+        "removeComments": false,
+        "noLib": false,
+        "preserveConstEnums": true,
+        "suppressImplicitAnyIndexErrors": true
+    },
+    "filesGlob": [
+        "./**/*.ts",
+        "./**/*.tsx",
+        "!./node_modules/**/*"
+    ],
+    "files": [
+        "./index.ts",
+        "./typings/node/node.d.ts",
+        "./typings/selenium-webdriver/selenium-webdriver.d.ts",
+        "./typings/tsd.d.ts"
+    ]
+}
