@@ -16,7 +16,7 @@ var SeleniumMeridian;
         sfd.findElement(By.id('login_username')).then(function (ele) {
             ele.sendKeys('hwindhoff');
             console.log("enter password");
-            sfd.findElement(By.id('login_password')).sendKeys('xxxxx');
+            sfd.findElement(By.id('login_password')).sendKeys('Neugier42!');
             sfd.findElement(By.id('landing-login')).click();
             console.log("clicked login");
             //sfd.sleep(2000);
@@ -25,11 +25,12 @@ var SeleniumMeridian;
                 .wait(until.elementLocated(By.id('modal_payment_update_snooze')), 5 * 1000)
                 .then(function (elm) {
                 console.log("closing payment modal");
-                //elm.sendKeys(username);
                 elm.click();
             })
                 .thenCatch(function (reason) {
                 console.log("payment modal not found");
+            })
+                .thenFinally(function () {
                 console.log("finding user user-menu-trigger");
                 sfd
                     .wait(until.elementsLocated(By.id('user-menu-trigger')), 5000)
@@ -41,9 +42,9 @@ var SeleniumMeridian;
                             console.log("clicked user-menu-triggers");
                             //sfd.wait(until.titleIs('wewillnotfindthis'), 5000);
                             sfd.wait(until.elementLocated(By.className('user-popup-item')), 4000)
-                                .then(function (upiEles) {
+                                .then(function (upiEle) {
                                 //  upiEles.forEach((upiEl) => {
-                                upiEles.click();
+                                upiEle.click();
                                 console.log("clicked user-popup-item");
                                 sfd.wait(alwaysReject, 500)
                                     .thenCatch(function () {
